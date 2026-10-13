@@ -1,1 +1,410 @@
-__CONTENT__
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Локальное обезличивание данных — раздаточные материалы</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(135deg,#5b2c8a,#8e44ad);min-height:100vh;color:#1f2233;line-height:1.55}.container{max-width:1000px;margin:0 auto;padding:36px 20px 60px}header{color:#fff;text-align:center;margin-bottom:32px}header h1{margin:0 0 8px;font-size:30px;line-height:1.2}header p{font-size:16px;opacity:.95;margin-bottom:6px}header .sub{font-size:14px;opacity:.85}header .sub a{color:#fff;border-bottom:1px dotted rgba(255,255,255,.55)}.card,.intro,.toc{background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 10px 40px rgba(0,0,0,.18);border:1px solid #e0e0e0}.intro,.toc{padding:24px 28px;box-shadow:0 6px 24px rgba(0,0,0,.12)}.card{padding:32px 28px}.intro p{font-size:15.5px;color:#444}.intro strong{color:#5b2c8a}h2{font-size:22px;color:#1f2233;margin-bottom:12px;line-height:1.3}.app-num{display:inline-block;background:#efe7f8;color:#5b2c8a;font-size:12px;font-weight:700;letter-spacing:.4px;padding:4px 12px;border-radius:999px;margin-bottom:8px;text-transform:uppercase}.app h2{font-size:20px;margin-top:4px}.app p,.app li{font-size:14.5px;color:#444}.app ul{margin-left:22px;margin-top:6px}.app table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}.app th{background:#f7f4fb;color:#5b2c8a;text-align:left;padding:10px 12px;border-bottom:2px solid #e0d6f0;font-weight:600}.app td{padding:10px 12px;border-bottom:1px solid #ece6f5;color:#333;vertical-align:top}.app tr:last-child td{border-bottom:none}.prompt{position:relative;background:#1e1e2e;color:#e8e8f0;padding:18px 18px 18px 20px;border-radius:10px;font-family:'SF Mono','Monaco','Consolas',monospace;font-size:13px;line-height:1.6;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word;margin:14px 0;border:1px solid #2d2d44}.prompt code{font-family:inherit;color:inherit;background:none;padding:0;white-space:pre-wrap}.copy-btn{position:absolute;top:10px;right:10px;background:#5b2c8a;color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .15s}.copy-btn:hover{background:#7c3aae}.copy-btn.ok{background:#2f9e44}.toc h3{margin-top:0;color:#5b2c8a;font-size:16px;text-transform:uppercase;letter-spacing:.5px}.toc ol{columns:2;column-gap:30px;margin-top:10px;list-style:decimal-leading-zero inside}.toc li{margin:4px 0;font-size:14px;break-inside:avoid}.toc a{color:#1f2233;text-decoration:none;border-bottom:1px dotted #c9b8e8}.toc a:hover{color:#5b2c8a}.callout{background:#fff8e1;border-left:4px solid #f59e0b;padding:12px 16px;margin:14px 0;border-radius:6px;font-size:14px;color:#5a3e0a}.callout.green{background:#e8f5e9;border-left-color:#2f9e44;color:#1b5e20}.steps{counter-reset:step;margin:14px 0;padding-left:0;list-style:none}.steps li{counter-increment:step;padding:10px 14px 10px 44px;position:relative;margin-bottom:6px;background:#faf7fd;border-radius:8px;font-size:14.5px}.steps li::before{content:counter(step);position:absolute;left:10px;top:50%;transform:translateY(-50%);background:#5b2c8a;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}.checklist{list-style:none;margin:14px 0;padding:0}.checklist li{padding:8px 0 8px 32px;position:relative;font-size:14.5px}.checklist li::before{content:'\2610';position:absolute;left:6px;top:8px;font-size:18px;color:#5b2c8a}.checklist li strong{color:#5b2c8a}.cmd{background:#0d0d1a;color:#b8ffce;font-family:'SF Mono','Monaco',monospace;padding:3px 7px;border-radius:4px;font-size:13px;display:inline-block;margin:2px 0}.note{font-size:13px;color:#777;font-style:italic;margin-top:8px}footer{text-align:center;padding:30px 0;color:#fff;opacity:.85;font-size:13px}footer a{color:#fff}@media (max-width:720px){.container{padding:20px 12px 40px}header h1{font-size:22px}.card,.intro,.toc{padding:20px 16px}.toc ol{columns:1}.app table{font-size:13px}.app th,.app td{padding:8px}.prompt{font-size:12px}}.gate-overlay{position:fixed;inset:0;background:rgba(20,15,40,.88);display:flex;align-items:center;justify-content:center;z-index:99999;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}.gate-box{background:#fff;padding:40px 32px;border-radius:16px;text-align:center;max-width:420px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3)}.gate-box h2{margin:0 0 12px;color:#5b2c8a;font-size:22px;line-height:1.3}.gate-box p{color:#555;margin:8px 0 16px;font-size:14.5px}.gate-box input{width:100%;padding:14px;margin:8px 0 14px;border:2px solid #e0d6f0;border-radius:8px;font-size:16px;box-sizing:border-box;outline:none;font-family:inherit}.gate-box input:focus{border-color:#5b2c8a}.gate-box button{padding:14px 32px;background:linear-gradient(135deg,#5b2c8a,#8e44ad);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:16px;font-weight:600;width:100%;font-family:inherit}.gate-box button:hover{opacity:.92}.gate-error{color:#dc3545;margin-top:10px;min-height:18px;font-size:14px}body.gate-locked > *:not(#gateOverlay){filter:blur(14px);pointer-events:none;user-select:none}</style>
+</head>
+<body class="gate-locked">
+<div class="gate-overlay" id="gateOverlay">
+  <div class="gate-box">
+    <h2>Локальное обезличивание данных</h2>
+    <p>Введите пароль, который вам прислал тренер.</p>
+    <input type="password" id="gatePw" placeholder="Пароль" autocomplete="off">
+    <button type="button" onclick="checkGate()">Войти</button>
+    <p class="gate-error" id="gateError"></p>
+  </div>
+</div>
+
+<header>
+  <h1>Локальное обезличивание данных</h1>
+  <p>Раздаточные материалы к занятию 15.10.2026</p>
+  <div class="sub">Программа «ИИ для руководителя v3» · <a href="./">← К списку занятий</a></div>
+</header>
+
+<div class="container">
+  <div class="intro">
+    <p>За два часа занятия собираем три конкретных решения для обезличивания документов перед отправкой в облачные ИИ. Главный результат — у вас в руках <strong>универсальный промпт-обезличиватель</strong>, пошаговая инструкция развертывания VPS-контура и понимание, какой из способов применить под конкретный тип документа.</p>
+  </div>
+
+  <nav class="toc">
+    <h3>Содержание</h3>
+    <ol>
+      <li><a href="#app1">Три корзины данных</a></li>
+      <li><a href="#app2">Словарь регулярных выражений</a></li>
+      <li><a href="#app3">Сравнение моделей</a></li>
+      <li><a href="#app4">VPS-провайдеры</a></li>
+      <li><a href="#app5">★ LM Studio (Apple Silicon)</a></li>
+      <li><a href="#app6">Reg.ru Cloud — Ollama из коробки</a></li>
+      <li><a href="#app7">Универсальный промпт</a></li>
+      <li><a href="#app8">Промпт для таблиц</a></li>
+      <li><a href="#app9">Промпт для производственных документов</a></li>
+      <li><a href="#app10">Промпт для переписки</a></li>
+      <li><a href="#app11">Сравнение способов</a></li>
+      <li><a href="#app12">Чек-лист безопасности</a></li>
+      <li><a href="#app13">Дорожная карта 14 дней</a></li>
+      <li><a href="#app14">Сценарии сложностей</a></li>
+    </ol>
+  </nav>
+
+
+  <!-- ПРИЛОЖЕНИЕ 1: Три корзины данных -->
+  <article class="card app" id="app1">
+    <span class="app-num">Приложение 1</span>
+    <h2>Три корзины данных</h2>
+    <p>Перед обезличиванием определите уровень чувствительности документа — это помогает выбрать способ обработки.</p>
+    <table>
+      <thead><tr><th>Цвет</th><th>Что внутри</th><th>Куда можно отправлять</th></tr></thead>
+      <tbody>
+        <tr><td><strong>🟢 Зелёная</strong></td><td>публичные шаблоны КП, ГОСТы, СНиПы, обезличенные методики</td><td>любой ИИ</td></tr>
+        <tr><td><strong>🟡 Жёлтая</strong></td><td>КП с реквизитами, сметы без паспортов, протоколы совещаний (ФИО → плейсхолдеры), отчёты с объектов</td><td>только после обезличивателя (способы №1–2)</td></tr>
+        <tr><td><strong>🔴 Красная</strong></td><td>паспорта, СНИЛС, банковские реквизиты клиентов, договоры с коммерческой тайной, ключи API</td><td>ТОЛЬКО локально на VPS, никогда в облако</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><strong>Жёлтая корзина</strong> — это 80% вашей работы. Обезличиватель нужен, чтобы превращать жёлтое в зелёное на входе узла.</div>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 2: Регулярные выражения -->
+  <article class="card app" id="app2">
+    <span class="app-num">Приложение 2</span>
+    <h2>Словарь регулярных выражений</h2>
+    <p>Для быстрого обезличивания небольших документов — прямо в Word или Google Docs. Закрывает 70% имён и номеров за 3 минуты, но не ловит косвенные связи.</p>
+    <table>
+      <thead><tr><th>Что ищем</th><th>Регулярное выражение</th><th>Заменяем на</th></tr></thead>
+      <tbody>
+        <tr><td>ФИО</td><td><span class="cmd">([А-ЯЁ][а-яё]+ ){2}[А-ЯЁ][а-яё]+</span></td><td>[ФИО_N]</td></tr>
+        <tr><td>ИНН</td><td><span class="cmd">ИНН ?[0-9]{10,12}</span></td><td>[ИНН]</td></tr>
+        <tr><td>ОГРН</td><td><span class="cmd">ОГРН ?[0-9]{13,15}</span></td><td>[ОГРН]</td></tr>
+        <tr><td>СНИЛС</td><td><span class="cmd">СНИЛС ?[0-9]{3}-[0-9]{3}-[0-9]{3} [0-9]{2}</span></td><td>[СНИЛС]</td></tr>
+        <tr><td>Паспорт</td><td><span class="cmd">[0-9]{4} ?[0-9]{6}</span></td><td>[ПАСПОРТ]</td></tr>
+        <tr><td>Телефон</td><td><span class="cmd">\+7 ?\(?[0-9]{3}\)? ?[0-9]{3}-?[0-9]{2}-?[0-9]{2}</span></td><td>[ТЕЛЕФОН]</td></tr>
+        <tr><td>Email</td><td><span class="cmd">[\w.-]+@[\w.-]+</span></td><td>[EMAIL]</td></tr>
+        <tr><td>Адрес</td><td><span class="cmd">(г\.|гор\.?|пос\.|ул\.)[^,.;]+</span></td><td>[АДРЕС]</td></tr>
+        <tr><td>Договор</td><td><span class="cmd">(договор|дог\.?) ?(№?|N)? ?[0-9]+</span></td><td>[ДОГОВОР_N]</td></tr>
+      </tbody>
+    </table>
+    <p class="note">В Word и Google Docs «Найти и заменить» (<span class="cmd">Ctrl+H</span>) поддерживает подстановочные знаки. Для ИНН/ОГРН/СНИЛС/паспорта точные паттерны работают. Для ФИО с вариативностью регистра лучше заменять через ИИ-промпт из Приложения 7.</p>
+  </article>
+
+
+  <!-- ПРИЛОЖЕНИЕ 3: Сравнение моделей -->
+  <article class="card app" id="app3">
+    <span class="app-num">Приложение 3</span>
+    <h2>Сравнение моделей для обезличивания (VPS, 2026)</h2>
+    <p>Все модели — открытые, с коммерческой лицензией, запускаются через Ollama. Ранжированы по качеству распознавания PII на русском.</p>
+    <table>
+      <thead><tr><th>Модель</th><th>RAM VPS</th><th>Качество NER (RU)</th><th>Скорость (8 vCPU)</th><th>Лицензия</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Qwen 2.5 7B Instruct</strong></td><td>8 GB</td><td>8/10</td><td>~30 сек/КП</td><td>Apache 2.0 ✅</td></tr>
+        <tr><td><strong>Qwen 2.5 14B Instruct</strong></td><td>16 GB</td><td>9/10</td><td>~60 сек/КП</td><td>Apache 2.0 ✅</td></tr>
+        <tr><td>Mistral 7B Instruct</td><td>8 GB</td><td>7/10</td><td>~28 сек/КП</td><td>Apache 2.0 ✅</td></tr>
+        <tr><td>Llama 3.1 8B Instruct</td><td>8 GB</td><td>7/10</td><td>~35 сек/КП</td><td>Llama Community ✅</td></tr>
+        <tr><td>Phi-4 14B</td><td>16 GB</td><td>9/10</td><td>~60 сек/КП</td><td>MIT ✅</td></tr>
+        <tr><td>GPT-OSS 20B</td><td>24 GB</td><td>9.5/10</td><td>~120 сек/КП</td><td>Apache 2.0 ✅</td></tr>
+      </tbody>
+    </table>
+    <div class="callout green"><strong>Рекомендация для производства:</strong> Qwen 2.5 14B. Лучшее качество на русском при 16 GB RAM. Команда установки: <span class="cmd">ollama pull qwen2.5:14b-instruct</span></div>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 4: VPS провайдеры -->
+  <article class="card app" id="app4">
+    <span class="app-num">Приложение 4</span>
+    <h2>VPS-провайдеры для Ollama</h2>
+    <table>
+      <thead><tr><th>Провайдер</th><th>Цена 8 vCPU/16 GB</th><th>Плюсы</th><th>Минусы</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Reg.ru Cloud</strong></td><td>~40–60 ₽/час</td><td>Госуслуги, рубли, российский ЦОД, почасовая</td><td>чуть дороже конкурентов</td></tr>
+        <tr><td><strong>Timeweb Cloud</strong></td><td>~35–55 ₽/час</td><td>готовые Docker-образы, оплата рублями</td><td>меньше встроенных фич</td></tr>
+        <tr><td>Aéza</td><td>от €0.02/час</td><td>Ryzen 9 9950X (топ CPU), почасовая</td><td>оплата картой</td></tr>
+        <tr><td>Selectel</td><td>~45–65 ₽/час</td><td>хороший SLA, РФ</td><td>дороже</td></tr>
+        <tr><td>Hetzner</td><td>от €4/мес</td><td>самый дешёвый</td><td>не РФ, нужен VPN для оплаты</td></tr>
+      </tbody>
+    </table>
+    <p class="note">В России — Reg.ru или Timeweb. Aéza — для экспериментов с максимальной скоростью CPU-инференса.</p>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 5: LM Studio -->
+  <article class="card app" id="app5">
+    <span class="app-num">Приложение 5</span>
+    <h2>★ Опция: LM Studio на Apple Silicon</h2>
+    <p>Это не основной способ — для редких случаев, когда у вас есть мощный Apple Silicon MacBook (M1/M2/M3/M4 с 16+ GB unified memory). Используется для работы офлайн: в самолёте, в поезде, на объекте без интернета.</p>
+    <ol class="steps">
+      <li>Установить LM Studio: <span class="cmd">brew install --cask lm-studio</span> или скачать с lmstudio.ai.</li>
+      <li>Вкладка «Discover» → найти «Qwen 2.5 7B Instruct» → скачать (~4.7 GB).</li>
+      <li>Вкладка «Chat» — выбрать модель — задать вопрос.</li>
+      <li>Вкладка «Developer» → включить «Running LM Studio on this machine».</li>
+      <li>API endpoint: <span class="cmd">http://localhost:1234/v1</span> (OpenAI-совместимый).</li>
+      <li>В LobeHub / n8n: указать Base URL = <span class="cmd">http://localhost:1234/v1</span>.</li>
+    </ol>
+    <p class="note">Минимальные требования: Apple M1/M2/M3/M4 с 16 GB unified memory, macOS 13+.</p>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 6: Reg.ru пошагово -->
+  <article class="card app" id="app6">
+    <span class="app-num">Приложение 6</span>
+    <h2>Reg.ru Cloud — Ollama из коробки (пошагово)</h2>
+    <ol class="steps">
+      <li>Войти на <strong>cloud.reg.ru</strong> → «Создать сервер» → регион <strong>Москва</strong>.</li>
+      <li>ОС: <strong>Ubuntu 22.04 LTS</strong>, тариф <strong>8 vCPU / 16 GB RAM / 100 GB NVMe</strong>.</li>
+      <li>Включить чекбокс «Установить Docker» при создании.</li>
+      <li>После создания — скопировать IP-адрес и SSH-ключ из личного кабинета.</li>
+      <li>Подключиться по SSH: <span class="cmd">ssh root@&lt;ip&gt;</span>.</li>
+      <li>Запустить Ollama в Docker:
+        <div class="prompt"><button class="copy-btn" data-copy-target="cmd1" onclick="copyText('cmd1')">Copy</button><code id="cmd1">docker run -d -p 11434:11434 --name ollama \
+  -v ollama_data:/root/.ollama \
+  ollama/ollama</code></div>
+      </li>
+      <li>Скачать модель Qwen 2.5 14B: <span class="cmd">docker exec ollama ollama pull qwen2.5:14b-instruct</span></li>
+      <li>Открыть порт 11434 в файрволе Reg.ru: «Сеть» → «Firewall» → разрешить входящие на 11434.</li>
+      <li>Проверить: <span class="cmd">curl http://&lt;ip&gt;:11434/api/tags</span> → список моделей.</li>
+      <li>В LobeHub / n8n: Base URL = <span class="cmd">http://&lt;ip&gt;:11434/v1</span>.</li>
+      <li>После работы — «Заархивировать сервер» в Reg.ru (оплата прекращается, состояние сохраняется).</li>
+    </ol>
+  </article>
+
+
+  <!-- ПРИЛОЖЕНИЕ 7: Универсальный промпт -->
+  <article class="card app" id="app7">
+    <span class="app-num">Приложение 7</span>
+    <h2>Универсальный промпт-обезличиватель</h2>
+    <p>Работает во всех способах №1 (VPS Ollama) и №2 (облака). Меняется только «движок», который его выполняет.</p>
+    <div class="prompt"><button class="copy-btn" data-copy-target="p7" onclick="copyText('p7')">Copy</button><code id="p7">Ты — обезличиватель документов для производственной компании. Твоя задача:
+превратить "жёлтые" данные в "зелёные", сохранив смысл и структуру.
+
+Правила замены (применяй строго):
+1. ФИО людей — на [ФАМИЛИЯ_ИМЯ_ОТЧЕСТВО_N], где N — порядковый номер с начала документа.
+2. Названия организаций — на [ОРГАНИЗАЦИЯ_N] с сохранением формы собственности (ООО/ЗАО/ИП).
+3. ИНН/ОГРН/КПП/СНИЛС — на [ИНН]/[ОГРН]/[КПП]/[СНИЛС].
+4. Паспортные данные — на [ПАСПОРТ].
+5. Телефоны, email, адреса — на [ТЕЛЕФОН]/[EMAIL]/[АДРЕС].
+6. Номера договоров, счетов, заказов — на [ДОГОВОР_N]/[СЧЁТ_N]/[ЗАКАЗ_N].
+7. Суммы в рублях — оставь как есть (это бизнес-данные).
+8. Даты — оставь как есть.
+9. Связки: если "Иванов из ООО «СМУ-7»" — замени ВСЕ элементы одной связки
+   одинаковыми плейсхолдерами в обоих местах, чтобы связь сохранилась.
+
+Структура выдачи:
+Верни ТОЛЬКО обезличенный текст, без комментариев. Сохрани абзацы.
+Не добавляй пояснений типа "вот обезличенный текст".
+
+Документ:
+[ЗДЕСЬ ВСТАВЬТЕ ТЕКСТ]</code></div>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 8: Промпт для таблиц -->
+  <article class="card app" id="app8">
+    <span class="app-num">Приложение 8</span>
+    <h2>Промпт-обезличиватель таблиц (CSV/Excel)</h2>
+    <div class="prompt"><button class="copy-btn" data-copy-target="p8" onclick="copyText('p8')">Copy</button><code id="p8">Ты — обезличиватель таблиц. На входе — таблица в формате CSV.
+
+Правила:
+- Колонки с ФИО / табельными номерами → [ФИО_N]/[ТАБ_НОМЕР].
+- Колонки с контактами (телефон, email) → [ТЕЛЕФОН]/[EMAIL].
+- Колонки с организациями → [ОРГАНИЗАЦИЯ_N].
+- Колонки с номерами договоров / счетов → [ДОГОВОР_N]/[СЧЁТ_N].
+- Колонки с суммами, датами, единицами измерения — оставь.
+- Шапку таблицы оставь без изменений.
+
+CSV:
+[ЗДЕСЬ ВСТАВЬТЕ CSV]</code></div>
+  </article>
+
+
+  <!-- ПРИЛОЖЕНИЕ 9: Промпт для производственных документов -->
+  <article class="card app" id="app9">
+    <span class="app-num">Приложение 9</span>
+    <h2>Промпт для производственных документов (КП, сметы, акты)</h2>
+    <div class="prompt"><button class="copy-btn" data-copy-target="p9" onclick="copyText('p9')">Copy</button><code id="p9">Ты — обезличиватель производственной документации. На входе —
+коммерческое предложение, смета, акт приёмки или договор подряда.
+
+Что заменять:
+- ФИО заказчика, подрядчика, представителей → [ФИО_N].
+- Названия организаций (исполнитель, заказчик, субподрядчик) → [ОРГАНИЗАЦИЯ_N].
+- ИНН/ОГРН/КПП → [ИНН]/[ОГРН]/[КПП].
+- Юридические адреса → [АДРЕС].
+- Банковские реквизиты (р/с, к/с, БИК) → [РЕКВИЗИТЫ].
+- Номера договоров, смет, актов → [ДОГОВОР_N]/[СМЕТА_N]/[АКТ_N].
+- Названия объектов (если содержат адрес или имя собственника) → [ОБЪЕКТ_N].
+
+Что НЕ заменять:
+- Суммы, единицы измерения (м², м³, шт).
+- Названия работ и материалов ("бетонирование фундамента, М300").
+- Технические характеристики.
+- Даты.
+
+Связки: если в одной строке ФИО + организация + объект + сумма, все
+подлежащие замене элементы превращаются в плейсхолдеры с одинаковыми
+индексами N, чтобы связь сохранилась.
+
+Документ:
+[ЗДЕСЬ ВСТАВЬТЕ ТЕКСТ]</code></div>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 10: Промпт для переписки -->
+  <article class="card app" id="app10">
+    <span class="app-num">Приложение 10</span>
+    <h2>Промпт-обезличиватель переписки</h2>
+    <div class="prompt"><button class="copy-btn" data-copy-target="p10" onclick="copyText('p10')">Copy</button><code id="p10">Ты — обезличиватель переписки (email, чат, мессенджер).
+
+Правила:
+- Имена в начале реплик ("Иван:", "Мария:") → [УЧАСТНИК_N]; N одинаковый
+  для одного человека во всей переписке.
+- Подписи с контактами ("Иван Иванов, +7 999 123-45-67, ivan@...") →
+  полностью убрать, оставить пустую строку.
+- Цитаты ("> писал ранее:") обезличивать по тем же правилам.
+- Технические идентификаторы (ID заявок, номера тикетов) → [ТИКЕТ_N].
+
+Переписка:
+[ЗДЕСЬ ВСТАВЬТЕ ТЕКСТ]</code></div>
+  </article>
+
+
+  <!-- ПРИЛОЖЕНИЕ 11: Сравнительная таблица способов -->
+  <article class="card app" id="app11">
+    <span class="app-num">Приложение 11</span>
+    <h2>Сравнительная таблица способов обезличивания</h2>
+    <table>
+      <thead><tr><th>Способ</th><th>Время (КП 2 стр.)</th><th>Качество</th><th>Стоимость</th><th>Уровень защиты</th><th>Сложность</th></tr></thead>
+      <tbody>
+        <tr><td><strong>№0</strong> Регулярки (Word)</td><td>5 мин</td><td>70%</td><td>0 ₽</td><td>🟡 низкая</td><td>1/5</td></tr>
+        <tr><td><strong>№1</strong> Ollama на VPS (Reg.ru, Aéza)</td><td>30 сек</td><td>92%</td><td>40–60 ₽/час</td><td>🟢 максимальная</td><td>3/5</td></tr>
+        <tr><td><strong>№2</strong> YandexGPT</td><td>8 сек</td><td>88%</td><td>~3 ₽/документ</td><td>🟡 средняя</td><td>1/5</td></tr>
+        <tr><td><strong>№2</strong> GigaChat</td><td>7 сек</td><td>85%</td><td>0 ₽*</td><td>🟡 средняя</td><td>1/5</td></tr>
+        <tr><td><strong>№2</strong> AiTunnel</td><td>10 сек</td><td>88%</td><td>от 100 ₽/пакет</td><td>🟡 средняя</td><td>2/5</td></tr>
+      </tbody>
+    </table>
+    <p class="note">* бесплатно в пределах лимита.</p>
+    <div class="callout"><strong>Способ №1</strong> даёт максимальное качество при полном контроле — данные физически не покидают российский ЦОД. <strong>Способ №2</strong> чуть слабее, но почти бесплатный.</div>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 12: Чек-лист безопасности -->
+  <article class="card app" id="app12">
+    <span class="app-num">Приложение 12</span>
+    <h2>Чек-лист безопасности на входе узла</h2>
+    <ul class="checklist">
+      <li>Документ проверен против <strong>3 корзин</strong> (Приложение 1) — уровень чувствительности определён.</li>
+      <li>Если «<strong>красный</strong>» — обезличивание НЕ спасает, документ остаётся локально на VPS, никогда не покидает контур.</li>
+      <li>Если «<strong>жёлтый</strong>» — обезличиватель запущен ДО отправки в облако.</li>
+      <li>Промпт-обезличиватель — единый, версия от 13.10.2026, в переменной окружения n8n.</li>
+      <li>Решение «куда отдавать после обезличивания»:
+        <ul>
+          <li>Локальный VPS-контур (способ №1) → можно сразу в любой ИИ</li>
+          <li>Российское облако (Yandex/GigaChat/AiTunnel, способ №2) → допустимо</li>
+          <li>Зарубежное облако (ChatGPT/Claude) → после обезличивания + доп. проверка связок человеком</li>
+        </ul>
+      </li>
+      <li>Каждый месяц — <strong>аудит</strong>: % документов, прошедших через обезличиватель.</li>
+      <li>Ключ от VPS — в <strong>менеджере паролей</strong>, не в коде n8n.</li>
+      <li>При смене сотрудника — передача ключей + смена пароля VPS.</li>
+      <li>Документы, отправленные в облако после обезличивания, — <strong>логируются</strong> (для аудита).</li>
+      <li>При архивировании VPS — данные на диске шифруются (LUKS или провайдерский шифрованный диск).</li>
+    </ul>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 13: Дорожная карта -->
+  <article class="card app" id="app13">
+    <span class="app-num">Приложение 13</span>
+    <h2>Дорожная карта внедрения обезличивателя (14 дней)</h2>
+    <ol class="steps">
+      <li><strong>День 1–2:</strong> Зарегистрироваться на Reg.ru Cloud (если ещё нет аккаунта), пройти идентификацию через Госуслуги. Оплатить 100 ₽ для теста.</li>
+      <li><strong>День 3–4:</strong> Арендовать VPS на 2–3 часа (тариф 8 vCPU/16 GB RAM), поднять Ollama в Docker, скачать Qwen 2.5 14B. Прогнать 5 своих реальных документов — проверить качество.</li>
+      <li><strong>День 5–7:</strong> Подключить VPS к LobeHub как «OpenAI-совместимый поставщик». Создать служебного агента «Обезличиватель». Проверить на тестовом документе.</li>
+      <li><strong>День 8–10:</strong> Встроить обезличиватель в n8n-конвейер «совещание → протокол» — добавить HTTP-ноду к Ollama VPS перед отправкой в облако. Прогнать цепочку end-to-end.</li>
+      <li><strong>День 11–13:</strong> Заархивировать VPS в Reg.ru (оплата прекращается), но не удалять. Включать по требованию — поработал час, заглушил.</li>
+      <li><strong>День 14:</strong> Аудит — сколько документов прошло через обезличиватель, какие были пропуски, какие регулярки добавить в словарь.</li>
+      <li><strong>Через 30 дней:</strong> Повторный аудит, добавление команды (обучить 1 сотрудника пользоваться обезличивателем).</li>
+    </ol>
+  </article>
+
+  <!-- ПРИЛОЖЕНИЕ 14: Сценарии сложностей -->
+  <article class="card app" id="app14">
+    <span class="app-num">Приложение 14</span>
+    <h2>Сценарии сложностей и решения</h2>
+    <table>
+      <thead><tr><th>#</th><th>Ситуация</th><th>Решение</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Reg.ru отказывает в идентификации</td><td>Альтернатива — Timeweb Cloud (тоже рубли + ЮMoney)</td></tr>
+        <tr><td>2</td><td>VPS с 16 GB RAM стоит дорого</td><td>Тариф 4 vCPU / 8 GB RAM с Qwen 2.5 7B — дешевле на 30%</td></tr>
+        <tr><td>3</td><td>Ollama медленно отвечает на длинных документах</td><td>Разбить на чанки по 2–3 страницы, обезличить каждый отдельно</td></tr>
+        <tr><td>4</td><td>Модель «галлюцинирует» — оставляет ФИО как есть</td><td>Усилить промпт few-shot примерами; для русского — Qwen</td></tr>
+        <tr><td>5</td><td>Файрвол Reg.ru не открыл 11434</td><td>Проверить правила файрвола; для теста — открыть на 0.0.0.0/0</td></tr>
+        <tr><td>6</td><td>YandexGPT обрезает документ (лимит токенов)</td><td>Разбить на чанки, обезличить каждый, склеить</td></tr>
+        <tr><td>7</td><td>Связка «ФИО + объект + сумма» сохраняется</td><td>Уточнить промпт: «связки остаются, но ВСЕ имена заменяются»</td></tr>
+        <tr><td>8</td><td>Команда не понимает, что такое «обезличиватель»</td><td>Показать 1 минуту демо + дать универсальный промпт</td></tr>
+        <tr><td>9</td><td>VPS упал по тайм-ауту / перезапуску</td><td><span class="cmd">restart: always</span> в docker run + cron для <span class="cmd">docker ps</span></td></tr>
+        <tr><td>10</td><td>Нет карты для оплаты VPS</td><td>Reg.ru/Timeweb (СБП, ЮMoney) — без зарубежной карты</td></tr>
+        <tr><td>11</td><td>Таблицы ломаются при копировании</td><td>Промпт для CSV (Приложение 8) или pandas-скрипт в n8n</td></tr>
+      </tbody>
+    </table>
+  </article>
+
+</div>
+
+<footer>
+  Программа «ИИ для руководителя v3» · Занятие 8 (15.10.2026)<br>
+  <a href="./">← К списку занятий</a>
+</footer>
+
+<script>
+(function(){
+  var PW = 'ai2026';
+  var sessionKey = 'ai_course_unlocked';
+  if (sessionStorage.getItem(sessionKey) === '1') {
+    unlock();
+  } else {
+    document.body.classList.add('gate-locked');
+  }
+  var pwInput = document.getElementById('gatePw');
+  if (pwInput) {
+    pwInput.addEventListener('keypress', function(e){
+      if (e.key === 'Enter') checkGate();
+    });
+    setTimeout(function(){ pwInput.focus(); }, 150);
+  }
+  window.checkGate = function(){
+    var v = document.getElementById('gatePw').value;
+    if (v === PW) {
+      sessionStorage.setItem(sessionKey, '1');
+      unlock();
+    } else {
+      document.getElementById('gateError').textContent = 'Неверный пароль';
+      document.getElementById('gatePw').value = '';
+      document.getElementById('gatePw').focus();
+    }
+  };
+  function unlock(){
+    document.body.classList.remove('gate-locked');
+    var ov = document.getElementById('gateOverlay');
+    if (ov) ov.style.display = 'none';
+  }
+})();
+function copyText(elementId) {
+  var el = document.getElementById(elementId);
+  if (!el) return;
+  var text = el.innerText;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){
+      var btn = document.querySelector('[data-copy-target="' + elementId + '"]');
+      if (btn) {
+        var orig = btn.textContent;
+        btn.textContent = '\u2713 Скопировано';
+        btn.classList.add('ok');
+        setTimeout(function(){ btn.textContent = orig; btn.classList.remove('ok'); }, 2000);
+      }
+    }).catch(function(){ fallbackCopy(text); });
+  } else {
+    fallbackCopy(text);
+  }
+}
+function fallbackCopy(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+}
+</script>
+</body>
+</html>
