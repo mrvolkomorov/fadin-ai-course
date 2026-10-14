@@ -25,7 +25,7 @@
 
 <div class="container">
   <div class="intro">
-    <p>За два часа занятия собираем три конкретных решения для обезличивания документов — от мгновенных облачных one-click решений до VPS-контура в российском ЦОД. Главный результат — у вас в руках <strong>универсальный промпт-обезличиватель</strong>, готовые облачные решения (Yandex Cloud Marketplace, Ollama Cloud) и пошаговая инструкция ручного развертывания и понимание, какой из способов применить под конкретный тип документа.</p>
+    <p>За два часа занятия собираем три конкретных решения для обезличивания документов — от мгновенных облачных one-click решений до VPS-контура в российском ЦОД. Главный результат — у вас в руках <strong>универсальный промпт-обезличиватель</strong>, готовые облачные решения (Ollama Cloud, Reg.ru с преднастройкой) и пошаговая инструкция ручного развертывания и понимание, какой из способов применить под конкретный тип документа.</p>
   </div>
 
   <nav class="toc">
@@ -36,7 +36,7 @@
       <li><a href="#app3">Сравнение моделей</a></li>
       <li><a href="#app4">VPS-провайдеры</a></li>
       <li><a href="#app5">★ LM Studio (Apple Silicon)</a></li>
-      <li><a href="#app6">Облачные one-click + ручная установка</a></li>
+      <li><a href="#app6">Облачные решения и ручная установка</a></li>
       <li><a href="#app7">Универсальный промпт</a></li>
       <li><a href="#app8">Промпт для таблиц</a></li>
       <li><a href="#app9">Промпт для производственных документов</a></li>
@@ -121,13 +121,12 @@
         <tr><td>Hetzner</td><td>от €4/мес</td><td>самый дешёвый</td><td>не РФ, нужен VPN для оплаты</td></tr>
       </tbody>
     </table>
-    <p class="note">В России — <strong>Yandex Cloud (Marketplace)</strong> — самый быстрый путь с Ollama + WebUI из коробки. Reg.ru и Timeweb — для ручной настройки. Aéza — для экспериментов с максимальной скоростью CPU-инференса.</p>
+    <p class="note">В России — <strong>Reg.ru</strong> с преднастройкой Ollama или <strong>Timeweb Cloud</strong> — для самостоятельной ручной установки. <strong>Aéza</strong> — для экспериментов с максимальной скоростью CPU-инференса.</p>
 
 <h3 style="margin-top:20px">Сравнение способов запуска Ollama</h3>
 <table>
 <thead><tr><th>Способ</th><th>Где данные</th><th>Установка</th><th>Цена</th><th>Для кого</th></tr></thead>
 <tbody>
-<tr><td><strong>Yandex Cloud Marketplace</strong></td><td>российский ЦОД</td><td>в один клик</td><td>~1000–2000 ₽/мес</td><td>первый запуск без знания Linux</td></tr>
 <tr><td><strong>Ollama Cloud</strong></td><td>серверы Ollama</td><td>вход по аккаунту</td><td>$20/мес Pro</td><td>без своего сервера вообще</td></tr>
 <tr><td><strong>Reg.ru (преднастройка)</strong></td><td>российский ЦОД</td><td>готовый образ</td><td>~1200–1800 ₽/мес</td><td>долговременный локальный контур</td></tr>
 <tr><td><strong>Reg.ru (вручную)</strong></td><td>российский ЦОД</td><td>через SSH и Docker</td><td>~1200–1800 ₽/мес</td><td>полный контроль и кастомные интеграции</td></tr>
@@ -153,27 +152,17 @@
     <p class="note">Минимальные требования: Apple M1/M2/M3/M4 с 16 GB unified memory, macOS 13+.</p>
   </article>
 
-  <!-- ПРИЛОЖЕНИЕ 6: Облачные решения one-click (Yandex Cloud) + ручная установка (Reg.ru) -->
+  <!-- ПРИЛОЖЕНИЕ 6: Облачные решения и ручная установка -->
   <article class="card app" id="app6">
     <span class="app-num">Приложение 6</span>
     <h2>Облачные решения в один клик и ручное развертывание</h2>
-    <p>Для запуска Ollama с обезличивателем у вас есть три пути. Начните с <strong>№1а (Yandex Cloud)</strong> — самый быстрый. Переходите к <strong>№2 (Reg.ru ручная)</strong>, если нужна ручная установка и полный контроль.</p>
+    <p>Для запуска Ollama с обезличивателем у вас есть два основных пути. Начните с <strong>№1 (Ollama Cloud)</strong> — без своего сервера. Переходите к <strong>№2 (Reg.ru)</strong>, если нужна ручная установка или преднастройка под российский ЦОД.</p>
 
-    <h3 style="margin-top:24px">№1а. Yandex Cloud Marketplace — в один клик (рекомендуется)</h3>
-    <p>Yandex Cloud опубликовал готовый продукт <strong>«Ollama + WebUI»</strong> в своём маркетплейсе. Разворачивается за 5 минут без знания Docker, SSH или Linux — просто выбираете модель при создании ВМ.</p>
-    <ol class="steps">
-      <li>Зарегистрироваться на <strong>yandex.cloud</strong> (платёжный аккаунт + пробный период 60 дней).</li>
-      <li>«Compute Cloud» → «Создать ВМ» → вкладка «Marketplace» → выбрать <strong>«Ollama + WebUI»</strong>.</li>
-      <li>В поле «Конфигурация продукта» указать модель (например, <span class="cmd">qwen2.5:14b-instruct</span> или <span class="cmd">deepseek-r1:8b</span>) — она загрузится автоматически.</li>
-      <li>Выбрать конфигурацию (минимум 8 vCPU / 16 GB RAM для Qwen 14B; 4 vCPU / 8 GB для Qwen 7B).</li>
-      <li>Указать SSH-ключ и группу безопасности с открытым TCP/22.</li>
-      <li>Нажать «Создать ВМ» — через 5 минут ВМ готова.</li>
-      <li>Подключиться к веб-интерфейсу: <span class="cmd">ssh -L 8080:localhost:8080 user@ip</span> → открыть <span class="cmd">http://localhost:8080</span> в браузере.</li>
-    </ol>
+
     <div class="callout green"><strong>Преимущества:</strong> оплата российскими картами (СБП, ЮMoney); данные физически находятся в российском ЦОД; готовый веб-интерфейс Open WebUI; можно выбрать пресет модели при установке.</div>
     <div class="callout"><strong>Стоимость:</strong> минимальный тариф ВМ (4 vCPU / 8 GB / 40 GB NVMe) ≈ 1,5–3 ₽/час ≈ ~1000–2000 ₽/мес при круглосуточной работе. Архивирование ВМ — оплата прекращается.</div>
 
-    <h3 style="margin-top:24px">№1б. Ollama Cloud — без своего сервера ($20/мес)</h3>
+    <h3 style="margin-top:24px">№1. Ollama Cloud (без своего сервера) — без своего сервера ($20/мес)</h3>
     <p>Официальный облачный сервис Ollama (ollama.com/cloud). Подходит, если не хотите возиться с серверами вообще.</p>
     <ul class="checklist">
       <li><strong>Free</strong> — $0, базовые кредиты, 1 модель одновременно.</li>
@@ -182,18 +171,18 @@
       <li><strong>Team</strong> — $500/мес, общий пул для команды.</li>
     </ul>
     <p><strong>Как подключить к LobeHub / n8n:</strong> открыть ollama.com → зарегистрироваться → API keys → создать ключ → в LobeHub / n8n указать Base URL = <span class="cmd">https://ollama.com</span>, вставить API Key.</p>
-    <div class="callout"><strong>Важно:</strong> данные уходят на серверы Ollama. Для «жёлтой» корзины — приемлемо (нет хранения, ZDR-политика по умолчанию). Для «красной» — только локальное развертывание по №1а или №2.</div>
+    <div class="callout"><strong>Важно:</strong> данные уходят на серверы Ollama. Для «жёлтой» корзины — приемлемо (нет хранения, ZDR-политика по умолчанию). Для «красной» — только локальное развертывание по №2 (Reg.ru VPS).</div>
 
-    <h3 style="margin-top:24px">№2. Reg.ru Cloud — ручная установка Ollama (если нужен полный контроль)</h3>
+    <h3 style="margin-top:24px">№2. Reg.ru Cloud (ручная установка или преднастройка) — ручная установка Ollama (если нужен полный контроль)</h3>
     <p>Этот путь остаётся для тех, кто хочет полную ручную настройку (другой регион, кастомные модели, интеграция с другим ПО на сервере). Reg.ru предоставляет преднастроенный образ <strong>«ИИ-ассистент на базе Ollama»</strong> — Ollama ставится автоматически, остаётся подключиться и загрузить свою модель.</p>
     <ol class="steps">
       <li>Войти на <strong>cloud.reg.ru</strong> → «Создать сервер» → регион <strong>Москва</strong>.</li>
-      <li>В выборе ОС найти преднастроенный образ <strong>Ollama</strong> (если есть в маркетплейсе) — иначе выбрать Ubuntu 22.04 + Docker (пошаговая ручная установка ниже).</li>
+      <li>Выбрать Ubuntu 22.04 LTS + Docker (галочка «Установить Docker» при создании).</li>
       <li>ОС: <strong>Ubuntu 22.04 LTS</strong>, тариф <strong>8 vCPU / 16 GB RAM / 100 GB NVMe</strong>.</li>
-      <li>Включить чекбокс «Установить Docker» при создании (или готовый образ Ollama).</li>
+      <li>Включить чекбокс «Установить Docker» при создании.</li>
       <li>После создания — скопировать IP-адрес и SSH-ключ из личного кабинета.</li>
       <li>Подключиться по SSH: <span class="cmd">ssh root@&lt;ip&gt;</span>.</li>
-      <li>Запустить Ollama в Docker (если ставили вручную):
+      <li>Запустить Ollama в Docker:
         <div class="prompt"><button class="copy-btn" data-copy-target="cmd1" onclick="copyText('cmd1')">Copy</button><code id="cmd1">docker run -d -p 11434:11434 --name ollama \
   -v ollama_data:/root/.ollama \
   ollama/ollama</code></div>
@@ -311,16 +300,14 @@ CSV:
       <thead><tr><th>Способ</th><th>Время (КП 2 стр.)</th><th>Качество</th><th>Стоимость</th><th>Уровень защиты</th><th>Сложность</th></tr></thead>
       <tbody>
         <tr><td><strong>№0</strong> Регулярки (Word)</td><td>5 мин</td><td>70%</td><td>0 ₽</td><td>🟡 низкая</td><td>1/5</td></tr>
-        <tr><td><strong>№1а</strong> Yandex Cloud Marketplace (Ollama + WebUI)</td><td>30 сек</td><td>92%</td><td>~1000–2000 ₽/мес</td><td>🟢 высокая</td><td>1/5</td></tr>
-        <tr><td><strong>№1б</strong> Ollama Cloud</td><td>30 сек</td><td>92%</td><td>$20/мес Pro</td><td>🟡 средняя</td><td>1/5</td></tr>
-        <tr><td><strong>№2</strong> Ollama на VPS (Reg.ru / Timeweb)</td><td>30 сек</td><td>92%</td><td>40–60 ₽/час</td><td>🟢 максимальная</td><td>3/5</td></tr>
-        <tr><td><strong>№3</strong> YandexGPT</td><td>8 сек</td><td>88%</td><td>~3 ₽/документ</td><td>🟡 средняя</td><td>1/5</td></tr>
-        <tr><td><strong>№3</strong> GigaChat</td><td>7 сек</td><td>85%</td><td>0 ₽*</td><td>🟡 средняя</td><td>1/5</td></tr>
-        <tr><td><strong>№3</strong> AiTunnel</td><td>10 сек</td><td>88%</td><td>от 100 ₽/пакет</td><td>🟡 средняя</td><td>2/5</td></tr>
+        <tr><td><strong>№1</strong> Ollama Cloud</td><td>30 сек</td><td>92%</td><td>$20/мес Pro</td><td>🟡 средняя</td><td>1/5</td></tr>
+        <tr><td><strong>№3</strong> Ollama на VPS (Reg.ru / Timeweb)</td><td>30 сек</td><td>92%</td><td>40–60 ₽/час</td><td>🟢 максимальная</td><td>3/5</td></tr>
+        <tr><td><strong>№2</strong> GigaChat</td><td>7 сек</td><td>85%</td><td>0 ₽*</td><td>🟡 средняя</td><td>1/5</td></tr>
+        <tr><td><strong>№2</strong> AiTunnel</td><td>10 сек</td><td>88%</td><td>от 100 ₽/пакет</td><td>🟡 средняя</td><td>2/5</td></tr>
       </tbody>
     </table>
     <p class="note">* бесплатно в пределах лимита.</p>
-    <div class="callout"><strong>Способы №1 (one-click)</strong> — минимум настройки; данные на серверах провайдера (Yandex Cloud / Ollama Cloud). <strong>Способ №2 (VPS)</strong> — данные в российском ЦОД под вашим контролем. <strong>Способ №3 (облака)</strong> — почти бесплатный, но данные уходят провайдеру.</div>
+    <div class="callout"><strong>Способ №1 (Ollama Cloud)</strong> — минимум настройки, без своего сервера; данные на серверах Ollama. <strong>Способ №2 (облака РФ)</strong> — почти бесплатный (GigaChat, AiTunnel), но данные уходят провайдеру. <strong>Способ №3 (VPS)</strong> — данные в российском ЦОД под вашим контролем, ручная настройка.</div>
   </article>
 
   <!-- ПРИЛОЖЕНИЕ 12: Чек-лист безопасности -->
@@ -334,8 +321,8 @@ CSV:
       <li>Промпт-обезличиватель — единый, версия от 13.10.2026, в переменной окружения n8n.</li>
       <li>Решение «куда отдавать после обезличивания»:
         <ul>
-          <li>Локальный VPS-контур (способ №2) или Yandex Cloud (способ №1а) → можно сразу в любой ИИ</li>
-          <li>Российское облако (YandexGPT/GigaChat/AiTunnel, способ №3) → допустимо</li>
+          <li>Локальный VPS-контур (способ №3) → можно сразу в любой ИИ</li>
+          <li>Российское облако (GigaChat / AiTunnel, способ №2) → допустимо</li>
           <li>Зарубежное облако (ChatGPT/Claude) → после обезличивания + доп. проверка связок человеком</li>
         </ul>
       </li>
@@ -352,9 +339,9 @@ CSV:
     <span class="app-num">Приложение 13</span>
     <h2>Дорожная карта внедрения обезличивателя (14 дней)</h2>
     <ol class="steps">
-      <li><strong>День 1:</strong> Зарегистрироваться на <strong>Yandex Cloud</strong> (cloud.yandex.ru) — пробный 60-дневный период. Оплатить 200 ₽ для теста.</li>
-      <li><strong>День 2–3:</strong> В Compute Cloud → Marketplace → выбрать «Ollama + WebUI». При создании ВМ указать модель <span class="cmd">qwen2.5:14b-instruct</span> или <span class="cmd">deepseek-r1:8b</span>. Через 5 минут обезличиватель работает через веб-интерфейс. Прогнать 5 своих реальных документов.</li>
-      <li><strong>День 4–5:</strong> Если Yandex Cloud не подходит — альтернатива: Ollama Cloud ($20/мес, без своего сервера). Зарегистрироваться на ollama.com → API key → подключить к LobeHub / n8n (Base URL = https://ollama.com).</li>
+      <li><strong>День 1:</strong> Зарегистрироваться в <strong>Ollama Cloud</strong> (ollama.com) — Pro $20/мес или бесплатный Free. ИЛИ арендовать <strong>Reg.ru Cloud</strong> (cloud.reg.ru) и пройти идентификацию через Госуслуги. Оплатить 200 ₽ для теста.</li>
+      <li><strong>День 2–3:</strong> Если выбрали Ollama Cloud — получить API key, подключить к LobeHub / n8n. Если Reg.ru — арендовать VPS на 2–3 часа (8 vCPU/16 GB), поднять Ollama в Docker, скачать Qwen 2.5 14B. Прогнать 5 своих реальных документов на любом из выбранных способов.</li>
+      
       <li><strong>День 6–8:</strong> Если нужен полный контроль — арендовать VPS в Reg.ru Cloud. Поднять Ollama в Docker, скачать Qwen 2.5 14B. Подключить к LobeHub как «OpenAI-совместимый поставщик».</li>
       <li><strong>День 9–11:</strong> Создать служебного агента «Обезличиватель» в LobeHub (через любой из выбранных способов). Проверить на тестовом документе из вашей работы.</li>
       <li><strong>День 12–14:</strong> Встроить обезличиватель в n8n-конвейер «совещание → протокол» (или в ваш рабочий сценарий). Проверить end-to-end. Архивировать VPS, если использовали.</li>
@@ -376,7 +363,7 @@ CSV:
         <tr><td>3</td><td>Ollama медленно отвечает на длинных документах</td><td>Разбить на чанки по 2–3 страницы, обезличить каждый отдельно</td></tr>
         <tr><td>4</td><td>Модель «галлюцинирует» — оставляет ФИО как есть</td><td>Усилить промпт few-shot примерами; для русского — Qwen</td></tr>
         <tr><td>5</td><td>Файрвол Reg.ru не открыл 11434</td><td>Проверить правила файрвола; для теста — открыть на 0.0.0.0/0</td></tr>
-        <tr><td>6</td><td>YandexGPT обрезает документ (лимит токенов)</td><td>Разбить на чанки, обезличить каждый, склеить</td></tr>
+        <tr><td>6</td><td>Облачный ИИ обрезает документ (лимит токенов)</td><td>Разбить на чанки, обезличить каждый, склеить</td></tr>
         <tr><td>7</td><td>Связка «ФИО + объект + сумма» сохраняется</td><td>Уточнить промпт: «связки остаются, но ВСЕ имена заменяются»</td></tr>
         <tr><td>8</td><td>Команда не понимает, что такое «обезличиватель»</td><td>Показать 1 минуту демо + дать универсальный промпт</td></tr>
         <tr><td>9</td><td>VPS упал по тайм-ауту / перезапуску</td><td><span class="cmd">restart: always</span> в docker run + cron для <span class="cmd">docker ps</span></td></tr>
