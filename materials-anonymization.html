@@ -117,13 +117,13 @@
       <thead><tr><th>Провайдер</th><th>Цена 8 vCPU/16 GB</th><th>Плюсы</th><th>Минусы</th></tr></thead>
       <tbody>
         <tr><td><strong>Reg.ru Cloud</strong></td><td>~40–60 ₽/час</td><td>Госуслуги, рубли, российский ЦОД, почасовая</td><td>чуть дороже конкурентов</td></tr>
-        <tr><td><strong>Timeweb Cloud</strong></td><td>~35–55 ₽/час</td><td>готовые Docker-образы, оплата рублями</td><td>меньше встроенных фич</td></tr>
+        <tr><td><strong>Timeweb Cloud</strong></td><td>~35–55 ₽/час</td><td><strong>Нет готового образа Ollama</strong> — для TimeWeb используйте AI Gateway (serverless)</td><td>меньше встроенных фич</td></tr>
         <tr><td>Aéza</td><td>от €0.02/час</td><td>Ryzen 9 9950X (топ CPU), почасовая</td><td>оплата картой</td></tr>
         <tr><td>Selectel</td><td>~45–65 ₽/час</td><td>хороший SLA, РФ</td><td>дороже</td></tr>
         <tr><td>Hetzner</td><td>от €4/мес</td><td>самый дешёвый</td><td>не РФ, нужен VPN для оплаты</td></tr>
       </tbody>
     </table>
-    <p class="note">В России — <strong>Reg.ru</strong> с преднастройкой Ollama или <strong>Timeweb Cloud</strong> — для самостоятельной ручной установки. <strong>Aéza</strong> — для экспериментов с максимальной скоростью CPU-инференса.</p>
+    <p class="note">В России — <strong>Reg.ru</strong> с преднастройкой Ollama. <strong>Timeweb Cloud</strong> для VPS с Ollama <strong>не подходит</strong> (нет готового образа) — используйте TimeWeb AI Gateway (см. ниже). <strong>Aéza</strong> — для экспериментов с максимальной скоростью CPU-инференса.</p>
 
 <h3 style="margin-top:20px">Сравнение способов запуска Ollama</h3>
 <table>
@@ -132,7 +132,7 @@
 <tr><td><strong>Ollama Cloud</strong></td><td>серверы Ollama</td><td>вход по аккаунту</td><td>$20/мес Pro</td><td>без своего сервера вообще</td></tr>
 <tr><td><strong>Reg.ru (преднастройка)</strong></td><td>российский ЦОД</td><td>готовый образ</td><td>~1200–1800 ₽/мес</td><td>долговременный локальный контур</td></tr>
 <tr><td><strong>Reg.ru (вручную)</strong></td><td>российский ЦОД</td><td>через SSH и Docker</td><td>~1200–1800 ₽/мес</td><td>полный контроль и кастомные интеграции</td></tr>
-<tr><td><strong>Timeweb Cloud</strong></td><td>российский ЦОД</td><td>вручную или шаблоны</td><td>~1000–1700 ₽/мес</td><td>стабильный SLA 99,98%</td></tr>
+
 <tr><td><strong>Aéza</strong></td><td>Германия/Нидерланды/РФ</td><td>вручную, Ryzen 9 9950X</td><td>от €0.02/час</td><td>максимальная скорость CPU</td></tr>
 </tbody>
 </table>
@@ -412,7 +412,7 @@ CSV:
       <tbody>
         <tr><td><strong>№0</strong> Регулярки (Word)</td><td>5 мин</td><td>70%</td><td>0 ₽</td><td>🟡 низкая</td><td>1/5</td></tr>
         <tr><td><strong>№1</strong> Ollama Cloud</td><td>30 сек</td><td>92%</td><td>$20/мес Pro</td><td>🟡 средняя</td><td>1/5</td></tr>
-        <tr><td><strong>№3</strong> Ollama на VPS (Reg.ru / Timeweb)</td><td>30 сек</td><td>92%</td><td>40–60 ₽/час</td><td>🟢 максимальная</td><td>3/5</td></tr>
+        <tr><td><strong>№3</strong> Ollama на VPS (Reg.ru — у Timeweb нет готового образа)</td><td>30 сек</td><td>92%</td><td>40–60 ₽/час</td><td>🟢 максимальная</td><td>3/5</td></tr>
         <tr><td><strong>№2</strong> GigaChat</td><td>7 сек</td><td>85%</td><td>0 ₽*</td><td>🟡 средняя</td><td>1/5</td></tr>
         <tr><td><strong>№1б</strong> OpenRouter</td><td>10 сек</td><td>88%</td><td>от $5 за кредиты</td><td>🟡 средняя</td><td>1/5</td></tr>
         <tr><td><strong>№1в</strong> Together AI</td><td>12 сек</td><td>87%</td><td>от $5 за кредиты</td><td>🟡 средняя</td><td>1/5</td></tr>
@@ -471,7 +471,7 @@ CSV:
     <table>
       <thead><tr><th>#</th><th>Ситуация</th><th>Решение</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td>Reg.ru отказывает в идентификации</td><td>Альтернатива — Timeweb Cloud (тоже рубли + ЮMoney)</td></tr>
+        <tr><td>1</td><td>Reg.ru отказывает в идентификации</td><td>Альтернатива: TimeWeb Cloud AI Gateway (serverless, рубли) или Ollama Cloud</td></tr>
         <tr><td>2</td><td>VPS с 16 GB RAM стоит дорого</td><td>Тариф 4 vCPU / 8 GB RAM с Qwen 2.5 7B — дешевле на 30%</td></tr>
         <tr><td>3</td><td>Ollama медленно отвечает на длинных документах</td><td>Разбить на чанки по 2–3 страницы, обезличить каждый отдельно</td></tr>
         <tr><td>4</td><td>Модель «галлюцинирует» — оставляет ФИО как есть</td><td>Усилить промпт few-shot примерами; для русского — Qwen</td></tr>
@@ -480,7 +480,7 @@ CSV:
         <tr><td>7</td><td>Связка «ФИО + объект + сумма» сохраняется</td><td>Уточнить промпт: «связки остаются, но ВСЕ имена заменяются»</td></tr>
         <tr><td>8</td><td>Команда не понимает, что такое «обезличиватель»</td><td>Показать 1 минуту демо + дать универсальный промпт</td></tr>
         <tr><td>9</td><td>VPS упал по тайм-ауту / перезапуску</td><td><span class="cmd">restart: always</span> в docker run + cron для <span class="cmd">docker ps</span></td></tr>
-        <tr><td>10</td><td>Нет карты для оплаты VPS</td><td>Reg.ru/Timeweb (СБП, ЮMoney) — без зарубежной карты</td></tr>
+        <tr><td>10</td><td>Нет карты для оплаты VPS</td><td>Reg.ru (СБП, ЮMoney) — без зарубежной карты. Или используйте TimeWeb AI Gateway без VPS</td></tr>
         <tr><td>11</td><td>Таблицы ломаются при копировании</td><td>Промпт для CSV (Приложение 8) или pandas-скрипт в n8n</td></tr>
       </tbody>
     </table>
