@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Своя корпоративная память: разворачиваем векторное хранилище — раздаточные материалы</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(135deg,#0f5132,#1f9d6b);min-height:100vh;color:#1f2233;line-height:1.55}.container{max-width:1000px;margin:0 auto;padding:36px 20px 60px}header{color:#fff;text-align:center;margin-bottom:32px}header h1{margin:0 0 8px;font-size:30px;line-height:1.2}header p{font-size:16px;opacity:.95;margin-bottom:6px}header .sub{font-size:14px;opacity:.85}header .sub a{color:#fff;border-bottom:1px dotted rgba(255,255,255,.55)}.card,.intro,.toc{background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 10px 40px rgba(0,0,0,.18);border:1px solid #e0e0e0}.intro,.toc{padding:24px 28px;box-shadow:0 6px 24px rgba(0,0,0,.12)}.card{padding:32px 28px}.intro p{font-size:15.5px;color:#444}.intro strong{color:#0f5132}h2{font-size:22px;color:#1f2233;margin-bottom:12px;line-height:1.3}.app-num{display:inline-block;background:#e4f5ec;color:#0f5132;font-size:13px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:12px}table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14.5px}th{background:#eaf7f0;color:#0f5132;text-align:left;padding:11px 12px;border:1px solid #cde9db;font-weight:600}td{padding:11px 12px;border:1px solid #d9ece2;vertical-align:top}ul,ol{padding-left:22px;margin:12px 0}li{margin-bottom:8px;font-size:15px}.toc h3{font-size:17px;color:#0f5132;margin-bottom:12px}.toc ol{font-size:15px}.toc a{color:#0f5132;text-decoration:none;font-weight:500}.toc a:hover{text-decoration:underline}h3{font-size:17px;color:#1f2233;margin:22px 0 10px}.note{background:#eefaf3;border-left:4px solid #1f9d6b;padding:14px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14.5px}.warn{background:#fff8ec;border-left:4px solid #e0a03a;padding:14px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14.5px}.good{background:#f0f9f2;border-left:4px solid #3a9e5c;padding:14px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14.5px}.danger{background:#fdf1f1;border-left:4px solid #c0392b;padding:14px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14.5px}pre{background:#1e2430;color:#e8ecf3;padding:16px 18px;border-radius:10px;overflow-x:auto;font-size:13.5px;line-height:1.5;margin:14px 0;font-family:ui-monospace,Menlo,Consolas,monospace}code{background:#eef2f8;padding:2px 6px;border-radius:4px;font-size:13.5px;font-family:ui-monospace,Menlo,Consolas,monospace}pre code{background:none;padding:0;color:inherit}.checklist{list-style:none;padding-left:0}.checklist li{padding-left:32px;position:relative}.checklist li:before{content:"☐";position:absolute;left:0;font-size:19px;color:#1f9d6b}.rule{background:#f7f9fc;border:1px solid #d9ece2;border-radius:10px;padding:16px 18px;margin:16px 0;font-size:15px;font-weight:500}.rule b{color:#0f5132}footer{text-align:center;color:rgba(255,255,255,.9);font-size:13.5px;padding:30px 20px;line-height:1.8}footer a{color:#fff}.gate-overlay{position:fixed;inset:0;background:linear-gradient(135deg,#0f5132,#1f9d6b);display:flex;align-items:center;justify-content:center;z-index:100}.gate-box{background:#fff;border-radius:16px;padding:32px;max-width:360px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}.gate-box h2{font-size:20px;margin-bottom:8px}.gate-box p{font-size:14px;color:#666;margin-bottom:16px}.gate-box input{width:100%;padding:11px 14px;border:1px solid #cde9db;border-radius:8px;font-size:15px;margin-bottom:12px}.gate-box button{width:100%;padding:11px;background:#0f5132;color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer}.gate-error{color:#c0392b;font-size:13px;margin-top:10px;min-height:18px}body.gate-locked .container,body.gate-locked header,body.gate-locked footer{filter:blur(6px);pointer-events:none}@media(max-width:640px){header h1{font-size:23px}.card{padding:22px 16px}.container{padding:24px 14px 44px}table{font-size:13.5px}th,td{padding:9px 8px}}</style>
+</head>
+<body class="gate-locked">
+<div class="gate-overlay" id="gateOverlay">
+  <div class="gate-box">
+    <h2>Своя корпоративная память</h2>
+    <p>Введите пароль, который вам прислал тренер.</p>
+    <input type="password" id="gatePw" placeholder="Пароль" autocomplete="off">
+    <button type="button" onclick="checkGate()">Войти</button>
+    <p class="gate-error" id="gateError"></p>
+  </div>
+</div>
+
+<header>
+  <h1>Своя корпоративная память</h1>
+  <p>Раздаточные материалы к занятию 11 (12.11.2026)</p>
+  <div class="sub">Программа «ИИ для руководителя v3» · <a href="./">← К списку занятий</a></div>
+</header>
+
+<div class="container">
+  <div class="intro">
+    <p>Этот материал — шпаргалка на тот случай, когда вы захотите повторить всё сами. На прошлом занятии вы <strong>подключали</strong> к своему агенту базу, которую поднял тренер. Теперь вы <strong>создаёте такую базу сами</strong> — на своём сервере, со своим ключом и своими документами. Ниже — как это сделать по шагам, без единой команды в терминале, и что делать, если что-то пошло не так.</p>
+  </div>
+
+  <nav class="toc">
+    <h3>Содержание</h3>
+    <ol>
+      <li><a href="#s1">Что вы получаете и зачем это вам</a></li>
+      <li><a href="#s2">Что нужно иметь перед началом</a></li>
+      <li><a href="#s3">Шаг 1. Арендуйте сервер</a></li>
+      <li><a href="#s4">Шаг 2. Подготовьте LobeHub и инструмент SSH</a></li>
+      <li><a href="#s5">Шаг 3. Создайте агента «VPS-администратор»</a></li>
+      <li><a href="#s6">Шаг 4. Скажите агенту «установи»</a></li>
+      <li><a href="#s7">Шаг 5. Наполните базу и проверьте её</a></li>
+      <li><a href="#s8">Шаг 6. Подключите базу к своему агенту в LobeHub</a></li>
+      <li><a href="#s9">Четыре обязанности владельца базы</a></li>
+      <li><a href="#s10">Сколько это стоит</a></li>
+      <li><a href="#s11">Если что-то пошло не так</a></li>
+      <li><a href="#s12">Домашнее задание и чек-лист</a></li>
+    </ol>
+  </nav>
+
+  <article class="card" id="s1">
+    <span class="app-num">Раздел 1</span>
+    <h2>Что вы получаете и зачем это вам</h2>
+    <p>На занятии 10 вы подключили к своему агенту базу, поднятую тренером. База работала, вы нашли в ней свои документы, проверили честность ответов. Но это была демонстрация: база чужая, ключ чужой, и завтра её не стало бы.</p>
+    <p>На этом занятии вы делаете то же самое, но по-настоящему:</p>
+    <table>
+      <thead><tr><th>Ступень</th><th>Что внутри</th><th>Кто владеет</th><th>Что меняется, когда это «своё»</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1. Папка на Google Диске</strong></td><td>файлы целиком</td><td>Google, но доступ у вас</td><td>находит по названию файла; свежее всегда</td></tr>
+        <tr><td><strong>2. База знаний платформы</strong></td><td>кусочки текста + векторы</td><td>платформа</td><td>находит по смыслу; лимиты; данные уходят в чужой контур</td></tr>
+        <tr><td><strong>3. Своя база (это занятие)</strong></td><td>то же, но на вашем сервере</td><td><strong>вы</strong></td><td>находит по смыслу; лимиты — ваш диск; данные не покидают контур компании; обновления и удаление — ваши</td></tr>
+      </tbody>
+    </table>
+    <div class="rule">
+      Три строки, которые стоит запомнить:<br>
+      <b>1.</b> Данные лежат там, где стоит сервер, а не там, где вы с ними работаете.<br>
+      <b>2.</b> Векторное хранилище — это не копия документов. Это кусочки текста плюс числа. Чтобы обновить документ, вы не перезаливаете архив: вы перезаливаете файл, а индекс пересобирается сам.<br>
+      <b>3.</b> У своей базы появляется владелец — человек, который добавляет документы, убирает старые и отвечает за доступ.
+    </div>
+  </article>
+
+  <article class="card" id="s2">
+    <span class="app-num">Раздел 2</span>
+    <h2>Что нужно иметь перед началом</h2>
+    <table>
+      <thead><tr><th>Что</th><th>Требование</th><th>Где взять</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Сервер</strong></td><td>Ubuntu 22.04 или 24.04, от 2 ядер и 4 ГБ памяти (8 ГБ с запасом), от 40 ГБ диска, доступ под root, без панели управления</td><td>VDSina «Standard» — 80 ₽/день; AdminVPS «Start» — 1 160 ₽/мес при оплате за год; Timeweb Cloud — от 5 480 ₽/мес и принимает иностранные карты</td></tr>
+        <tr><td><strong>LobeHub Desktop</strong></td><td>настольная версия, не облачная</td><td>lobehub.com</td></tr>
+        <tr><td><strong>Node.js</strong></td><td> LTS-версия, установка обычная</td><td>nodejs.org</td></tr>
+        <tr><td><strong>Документы</strong></td><td>2–3 файла, лучше обезличенные версии</td><td>то, что вы уже готовили на занятии 8</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <strong>Зачем настольная версия LobeHub.</strong> Локальные MCP-коннекторы (в том числе SSH) работают только в настольном приложении. В облачной версии ваш агент не сможет ходить на ваш сервер.
+    </div>
+    <div class="warn">
+      <strong>Про данные.</strong> Кладите в базу только то, что уже обезличили на занятии 8. Настоящие документы с реквизитами, персональными данными клиентов и сотрудников — не выгружайте. База на вашем сервере — это уже хорошо, но она не превращает компанию в зону, где можно забыть про 152-ФЗ.
+    </div>
+  </article>
+
+  <article class="card" id="s3">
+    <span class="app-num">Раздел 3</span>
+    <h2>Шаг 1. Арендуйте сервер</h2>
+    <p>При заказе важны три вещи: <strong>операционная система Ubuntu</strong> (22.04 или 24.04), <strong>доступ под root</strong> и <strong>объём памяти</strong>. Панель управления не нужна — всё остальное делает ваш агент.</p>
+    <table>
+      <thead><tr><th>Провайдер</th><th>Конфигурация</th><th>Цена</th><th>Особенности</th></tr></thead>
+      <tbody>
+        <tr><td><strong>VDSina</strong> «Standard»</td><td>4 ядра / 8 ГБ / 150 ГБ</td><td>80 ₽/день (2 400 ₽/мес)</td><td>Посуточная оплата — можно взять на один день и попробовать. Образы Ubuntu 22.04/24.04 в наличии</td></tr>
+        <tr><td><strong>AdminVPS</strong> «Start»</td><td>4 × 3,6 ГГц / 8 ГБ / 80 ГБ NVMe</td><td>1 160 ₽/мес при оплате за год</td><td>Дешевле в пересчёте на месяц</td></tr>
+        <tr><td><strong>Timeweb Cloud</strong></td><td>от 4 ГБ</td><td>от 5 480 ₽/мес</td><td>Официально принимает иностранные карты</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Цены указаны на 30 октября 2026 года. Перед оплатой сверьтесь на сайте — тарифы меняются. Оплата иностранной картой у VDSina и AdminVPS официально не поддерживается: если ваша карта не проходит, работающий вариант — Timeweb Cloud, либо оплата через СБП.</div>
+    <p>После заказа вы получите на почту <strong>IP-адрес</strong> и <strong>root-пароль</strong>. Сохраните их в отдельном файле — они понадобятся на занятии.</p>
+  </article>
+
+  <article class="card" id="s4">
+    <span class="app-num">Раздел 4</span>
+    <h2>Шаг 2. Подготовьте LobeHub и инструмент SSH</h2>
+    <p>Агенту нужен инструмент, который умеет выполнять команды на сервере. В LobeHub он ставится из каталога MCP.</p>
+    <ol>
+      <li>Откройте LobeHub Desktop → <strong>Настройки → Навыки</strong> (Skills).</li>
+      <li>Найдите в каталоге <strong>SSH MCP Server</strong> (автор — fangjunjie, пакет <code>@fangjunjie/ssh-mcp-server</code>) и установите его.</li>
+      <li>Если LobeHub попросит Node.js — поставьте его с nodejs.org и повторите установку.</li>
+      <li>Впишите четыре поля подключения:</li>
+    </ol>
+    <table>
+      <thead><tr><th>Поле</th><th>Что вписать</th></tr></thead>
+      <tbody>
+        <tr><td><strong>HOST</strong></td><td>IP-адрес вашего сервера</td></tr>
+        <tr><td><strong>PORT</strong></td><td>22</td></tr>
+        <tr><td><strong>USERNAME</strong></td><td>root</td></tr>
+        <tr><td><strong>PASSWORD</strong></td><td>root-пароль из письма провайдера</td></tr>
+      </tbody>
+    </table>
+    <div class="danger">
+      <strong>Самая частая ошибка — лишний пробел в пароле.</strong> Если пароль скопирован вместе с невидимым символом или пробелом в конце, подключение не работает. Впишите пароль заново руками, без копирования.
+    </div>
+  </article>
+
+  <article class="card" id="s5">
+    <span class="app-num">Раздел 5</span>
+    <h2>Шаг 3. Создайте агента «VPS-администратор»</h2>
+    <p>LobeHub → <strong>Создать агента → Создать своего агента</strong>. Назовите его <strong>VPS-администратор</strong>.</p>
+    <p>В поле основных инструкций вставьте готовый текст, который тренер пришлёт файлом <code>agent-prompt.md</code>. Суть инструкции:</p>
+    <div class="note">
+      «Ты — системный администратор Linux-серверов. Твоя задача — развернуть на сервере готовую RAG-базу знаний voitta-rag с веб-интерфейсом. У тебя есть MCP-инструменты для работы с сервером по SSH. Выполни ровно одну установочную команду…»
+    </div>
+    <div class="warn">
+      <strong>Не забудьте главное:</strong> «Профиль агента → Навыки → переключатель навыка <strong>SSH MCP Server</strong> — включён». Без этого агент не увидит сервер, даже если навык установлен.
+    </div>
+    <p>Вставьте инструкцию <strong>из файла</strong>, а не копированием из окна браузера: при копировании в текст попадают неразрывные пробелы, и агент начинает «галлюцинировать» команды.</p>
+  </article>
+
+  <article class="card" id="s6">
+    <span class="app-num">Раздел 6</span>
+    <h2>Шаг 4. Скажите агенту «установи»</h2>
+    <p>Все, что нужно сделать, — одна команда. Агент выполнит её на сервере:</p>
+    <pre><code>bash -c "curl -fsSL https://raw.githubusercontent.com/mrvolkomorov/vps-voitta-rag-guide/main/deploy.sh | bash"</code></pre>
+    <p>Скрипт за вас поставит Docker, скачает приложение, соберёт образ, настроит веб-доступ, создаст ключ и пароль и выведет готовый отчёт. Десять шагов — примерно так они выглядят:</p>
+    <ol>
+      <li><strong>Проверяет сервер:</strong> операционная система, ядра, память, диск. Если это не Ubuntu или Debian — останавливается.</li>
+      <li><strong>Ставит Docker</strong> и собирает образ приложения. Это самая долгая часть — <strong>10–30 минут</strong>. Если памяти меньше 6 ГБ, скрипт сам добавит файл подкачки и продолжит.</li>
+      <li><strong>Скачивает voitta-rag</strong> и накладывает обязательную правку: в свежей версии fastmcp-модуль переехал, и без правки контейнер просто не стартует.</li>
+      <li><strong>Пишет настройки:</strong> где лежат данные, какая модель превращает текст в числа, порт, публичный адрес.</li>
+      <li><strong>Поднимает nginx</strong> и разводит две зоны авторизации: <code>/mcp/</code> и <code>/api/raw/</code> — строго по ключу (это контракт для агента); всё остальное, включая веб-интерфейс, — по логину с паролем, потому что браузер не умеет слать Bearer-заголовок.</li>
+      <li><strong>Выпускает сертификат</strong> на бесплатное имя вида <code>rag.ваш-IP.sslip.io</code>. Домен покупать не нужно: имя резолвится по IP, и Let's Encrypt такие выпускает.</li>
+      <li><strong>Ставит авто-переиндексацию:</strong> раз в пару минут сверяет папки и переиндексирует изменившиеся. Это важно: само приложение новые файлы не подхватывает.</li>
+      <li><strong>Проверяет себя:</strong> без ключа должно быть 401, с ключом — 200.</li>
+      <li><strong>Печатает отчёт:</strong> адрес веб-интерфейса, логин, пароль, адрес для агента, ключ и готовый JSON-блок для LobeHub.</li>
+    </ol>
+    <div class="note">
+      <strong>Если вышло сообщение «ГОТОВО — что дальше»</strong> — всё получилось. В отчёте есть четыре вещи, которые понадобятся: адрес веб-интерфейса, логин, пароль, адрес MCP и ключ. Сохраните их в отдельный файл — это ваши реквизиты от компании.
+    </div>
+    <div class="warn">
+      <strong>Если установка «зависла» на 10–30 минут — это не поломка.</strong> Это сборка образа. Попросите агента повторить команду с логом: та же строка, но в конце добавить <code>2>&1</code> и <code>tee /var/log/voitta-deploy.log</code>. Тогда весь ход установки сохранится в файле и его можно показать тренеру.
+    </div>
+  </article>
+
+  <article class="card" id="s7">
+    <span class="app-num">Раздел 7</span>
+    <h2>Шаг 5. Наполните базу и проверьте её</h2>
+    <ol>
+      <li>Откройте веб-интерфейс базы по адресу из отчёта и войдите логином и паролем.</li>
+      <li>Создайте папку — например, <code>Мои документы</code>. Одна папка на тематику; несколько папок — несколько независимых корпусов.</li>
+      <li>Загрузите в папку 2–3 ваших документа.</li>
+      <li>Включите поиск по этой папке. <strong>Это делается один раз для папки</strong> — включили, и дальше новые файлы подхватываются сами, каждые пару минут.</li>
+      <li>Задайте агенту вопрос по смыслу, а не по названию файла: «что мы обещаем клиенту по срокам согласования» вместо «открой прайс».</li>
+    </ol>
+    <div class="good">
+      <strong>Проверка честности.</strong> Задайте вопрос, ответа в документах нет. Правильный ответ агента: «в документах этого нет». Уверенный ответ с выдуманным числом — это дефект, который надо ловить. И ещё: открывайте цитату и сверяйте с исходником. Ответ без проверки — не ответ.
+    </div>
+  </article>
+
+  <article class="card" id="s8">
+    <span class="app-num">Раздел 8</span>
+    <h2>Шаг 6. Подключите базу к своему агенту в LobeHub</h2>
+    <p>Возьмите из отчёта агента готовый JSON-блок (в нём — адрес и ключ) и импортируйте его:</p>
+    <ol>
+      <li>LobeHub → <strong>Коннекторы</strong> → добавить <strong>пользовательский MCP-коннектор</strong> (Custom MCP).</li>
+      <li>В диалоге поле транспорта называется <strong>type</strong> (значение <code>http</code>), а не <code>transport</code>.</li>
+      <li>Заголовок авторизации кладётся в <strong>headers</strong> как <code>Authorization: Bearer &lt;ключ&gt;</code> — ровно один пробел.</li>
+      <li>Нажмите <strong>«Проверить соединение»</strong> — должна быть зелёная галочка.</li>
+      <li>Самый быстрый путь — <strong>Import JSON config</strong> из готового файла, а не заполнение полей по одному.</li>
+    </ol>
+    <div class="note">
+      <strong>Импортируйте из файла, а не копируйте из документа.</strong> При копировании JSON из окна браузера в него попадают неразрывные пробелы, и он не распарсится. Тренер передаст вам готовый файл — отправьте его себе в Telegram и импортируйте оттуда.
+    </div>
+    <p>После подключения в наборе инструментов агента появятся инструменты поиска по базе. Задайте агенту вопрос по вашим документам — теперь он отвечает по <strong>вашей</strong> базе.</p>
+  </article>
+
+  <article class="card" id="s9">
+    <span class="app-num">Раздел 9</span>
+    <h2>Четыре обязанности владельца базы</h2>
+    <p>У корпоративной памяти появляется владелец. Это не «настроил и забыл» — это четыре регулярные обязанности.</p>
+    <table>
+      <thead><tr><th>Обязанность</th><th>Как это выглядит на практике</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Добавлять новые документы</strong></td><td>Новый прайс или регламент — в базу сразу, а не «когда-нибудь». Иначе агент будет отвечать по старой версии.</td></tr>
+        <tr><td><strong>Убирать старые</strong></td><td>Отменённый прайс, устаревший регламент — из базы. Агент найдёт ближайший документ и ответит по нему: он не знает, что документ отменён.</td></tr>
+        <tr><td><strong>Регулярно проверять честность</strong></td><td>Один-два контрольных вопроса, ответа в базе нет. Правильный ответ — «в документах этого нет». Так вы понимаете, что агент не выдумывает.</td></tr>
+        <tr><td><strong>Отвечать за доступ</strong></td><td>Кто имеет ключ, где он хранится, что делать, если сотрудник уходит. Перевыпуск ключа должен быть возможен.</td></tr>
+      </tbody>
+    </table>
+    <div class="rule">
+      <b>Ответ на главный вопрос:</b> кто в компании будет вести базу? Вариантов три — сам руководитель раз в месяц, ассистент, внешний подрядчик. У варианта «сам руководитель» есть цена: час вашего времени. Считайте её честно.
+    </div>
+  </article>
+
+  <article class="card" id="s10">
+    <span class="app-num">Раздел 10</span>
+    <h2>Сколько это стоит</h2>
+    <table>
+      <thead><tr><th>Статья</th><th>Сколько</th><th>Комментарий</th></tr></thead>
+      <tbody>
+        <tr><td>Сервер</td><td>от 80 ₽/день (VDSina) или 1 160 ₽/мес (AdminVPS «Start»)</td><td>Обычно самая маленькая статья</td></tr>
+        <tr><td>Модель превращения текста в числа</td><td>по факту запросов</td><td>Зависит от объёма базы</td></tr>
+        <tr><td>Резервное копирование и обновления</td><td>время администратора</td><td>Обновлять контейнер нужно — иначе про CVE забудете</td></tr>
+        <tr><td><strong>Время человека</strong></td><td><strong>главная статья</strong></td><td>Час администратора стоит дороже любого тарифа</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      Сравните с платформой: облачная база знаний стоит от 9,9 $ в месяц и выше, плюс данные уходят в чужой контур, плюс лимит на число записей. Своя база даёт вам вместо подписки — сервер и час времени. Иногда это выгоднее, иногда нет. Решение — не по цене, а по тому, нужна ли вам эта контрольная точка.
+    </div>
+  </article>
+
+  <article class="card" id="s11">
+    <span class="app-num">Раздел 11</span>
+    <h2>Если что-то пошло не так</h2>
+    <table>
+      <thead><tr><th>Симптом</th><th>Что это</th><th>Что делать</th></tr></thead>
+      <tbody>
+        <tr><td>Агент не может подключиться к серверу</td><td>чаще всего — лишний пробел при копировании root-пароля</td><td>проверить IP, порт 22, логин <code>root</code>; вписать пароль заново</td></tr>
+        <tr><td>«Установи» обрывается, таймаут</td><td>сборка образа идёт 10–30 минут — это не поломка</td><td>попросить агента повторить команду с логом: та же строка, но в конце добавить <code>2>&1</code> и <code>tee /var/log/voitta-deploy.log</code></td></tr>
+        <tr><td>Сборка падает из-за памяти</td><td>4 ГБ без запаса на сборку</td><td>попросить агента добавить swap 4 ГБ и повторить</td></tr>
+        <tr><td>Агент отвечает, но не находит документы</td><td>новая папка не включена; индекс не пересобран</td><td>«включи поиск по папке ИМЯ» — папку включают один раз; файлы в уже включённой папке подхватываются сами</td></tr>
+        <tr><td>JSON не импортируется</td><td>неразрывные пробелы при копировании из документа</td><td>импортировать из файла, а не копировать из окна браузера</td></tr>
+        <tr><td>«Проверить соединение» не проходит</td><td>в заголовке два пробела или перевод строки</td><td>ровно один пробел после <code>Bearer</code>, без перевода строки</td></tr>
+        <tr><td>Инструменты не появились у агента</td><td>переключатель навыка SSH выключен</td><td>«Профиль агента → Навыки → SSH MCP Server» — включён</td></tr>
+      </tbody>
+    </table>
+  </article>
+
+  <article class="card" id="s12">
+    <span class="app-num">Раздел 12</span>
+    <h2>Домашнее задание и чек-лист</h2>
+    <p><strong>На неделю:</strong></p>
+    <ul>
+      <li><strong>Пн 10 мин</strong> — загрузить в базу два-три документа компании (обезличенные версии) и включить поиск по папке.</li>
+      <li><strong>Ср 10 мин</strong> — задать агенту три вопроса по смыслу, открыть цитаты, сверить с исходниками.</li>
+      <li><strong>Пт 10 мин</strong> — один вопрос-ловушка (ответа в документах нет) и убедиться, что агент честно отказался.</li>
+    </ul>
+    <p><strong>Чек-лист готовности:</strong></p>
+    <ul class="checklist">
+      <li>Сервер арендован: Ubuntu 22.04/24.04, root-доступ, IP и пароль сохранены.</li>
+      <li>Навык SSH установлен и включён для агента; «Проверить соединение» — зелёная галочка.</li>
+      <li>Агент «VPS-администратор» создан, инструкция вставлена из файла.</li>
+      <li>База поднята: есть адрес веб-интерфейса, логин, пароль, адрес MCP, ключ.</li>
+      <li>Папка создана, 2–3 документа загружены, поиск по папке включён.</li>
+      <li>Вопрос по смыслу вернул цитату; вопрос-ловушка — честный отказ.</li>
+      <li>База подключена к LobeHub: JSON импортирован, «Проверить соединение» пройдено.</li>
+      <li>Записаны 4 пункта: сервер, администратор, содержимое базы, правило проверки ответов.</li>
+    </ul>
+  </article>
+
+  <footer>
+    Материалы программы «ИИ для руководителя v3» · занятие 11, 12 ноября 2026<br>
+    <a href="https://mrvolkomorov.github.io/vps-voitta-rag-guide/">Справка: своя RAG-база без терминала</a> ·
+    <a href="https://github.com/voitta-ai/voitta-rag">voitta-rag (AGPL-3.0)</a> ·
+    <a href="https://lobehub.com">LobeHub</a> ·
+    <a href="https://nodejs.org">Node.js</a><br>
+    Ключи и пароли в материале не приводятся — они выдаются отдельно.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var PW = 'ai2026';
+  var sessionKey = 'ai_course_unlocked';
+  if (sessionStorage.getItem(sessionKey) === '1') {
+    unlock();
+  } else {
+    document.body.classList.add('gate-locked');
+  }
+  var pwInput = document.getElementById('gatePw');
+  if (pwInput) {
+    pwInput.addEventListener('keypress', function(e){
+      if (e.key === 'Enter') checkGate();
+    });
+    setTimeout(function(){ pwInput.focus(); }, 150);
+  }
+  window.checkGate = function(){
+    var v = document.getElementById('gatePw').value;
+    if (v === PW) {
+      sessionStorage.setItem(sessionKey, '1');
+      unlock();
+    } else {
+      document.getElementById('gateError').textContent = 'Неверный пароль';
+      document.getElementById('gatePw').value = '';
+      document.getElementById('gatePw').focus();
+    }
+  };
+  function unlock(){
+    document.body.classList.remove('gate-locked');
+    var ov = document.getElementById('gateOverlay');
+    if (ov) ov.style.display = 'none';
+  }
+})();
+</script>
+</body>
+</html>
